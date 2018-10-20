@@ -1,0 +1,25 @@
+RewriteEngine On
+RewriteRule ^([a-zA-Z0-9-z\-\_&=]+)/?$ ?page22=$1 [NC,L]
+RewriteRule ^([a-zA-Z0-9-z\-\_&=]+)/?$ ?page22=$1 [NC,L]
+RewriteRule ^([a-zA-Z0-9-z\-\_&=]+)/([a-zA-Z0-9-z\-\_&=]+)/?$ ?page22=$1 [NC,L]
+RewriteRule ^([a-zA-Z0-9-z\-\_&=]+)/([a-zA-Z0-9-z\-\_&=]+)/?$ ?page22=$1 [NC,L]
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^([_0-9a-zA-Z-]+/)?(.*\.php)$ $2 [L]
+RewriteRule . / [L]
+
+RewriteEngine On
+# proc/self/environ? noway!
+RewriteCond %{QUERY_STRING} proc/self/environ [OR]
+# Block out any script trying to set a mosConfig value through the URL
+RewriteCond %{QUERY_STRING} mosConfig_[a-zA-Z_]{1,21}(=|\%3D) [OR]
+# Block out any script trying to base64_encode crap to send via URL
+RewriteCond %{QUERY_STRING} base64_encode.*(.*) [OR]
+
+ErrorDocument 404 /cool404.html
+ErrorDocument 500 /cool500.html
+
+<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|js|css|pdf)$">
+	Header set Cache-Control "max-age=28800"
+</FilesMatch>
