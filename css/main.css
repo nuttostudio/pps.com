@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "OMYIM";
+  src: url("../font/PSL-OMYIM_0.TTF");
+  font-weight: normal;
+  font-style: normal;
+}
+body{
+	font-family: "OMYIM";
+}
+button.btn.btn-outline-success:hover{
+	color: #fff!important;
+}

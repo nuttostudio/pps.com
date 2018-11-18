@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container mt-5">
 	<div class="row justify-contant-md-center">
 		<div class="col-md-10">
-			<h3 class="m-0">ลงทะเบียนเข้าใช้สมาชิก</h3>
-			<small>เครือข่ายเยาวชนพัฒนาบ้านเกิด</small>
+			<h3 class="m-0">ลงทะเบียนเข้าใช้งานระบบสมาชิก</h3>
+			<p>เครือข่ายเยาวชนพัฒนาบ้านเกิด</p>
 		</div>
 		<div class="col-md-12 mt-3">
 			<form>
